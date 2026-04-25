@@ -1,56 +1,22 @@
 {
-    "name": "@flowterm/term",
-    "version": "0.1.0",
-    "description": "Advanced terminal layout management library for Node.js",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Springvar/panecake.git"
-    },
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js",
-            "require": "./dist/index.cjs",
-            "default": "./dist/index.js"
-        }
-    },
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
+    "name": "@ai-gentix/monorepo",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Agentic AI toolbox monorepo",
     "scripts": {
-        "build": "tsc",
-        "clean": "rimraf dist",
-        "lint": "eslint src --ext .ts",
-        "lint:fix": "eslint src --ext .ts --fix",
-        "test": "jest --coverage",
-        "test:watch": "jest --watch",
-        "prepare": "husky install"
-    },
-    "dependencies": {
-        "blessed": "^0.1.81",
-        "node-pty": "^1.0.0"
+        "build": "turbo run build",
+        "build:term": "turbo run build --filter=@ai-gentix/term",
+        "test": "turbo run test",
+        "test:term": "turbo run test --filter=@ai-gentix/term",
+        "lint": "turbo run lint",
+        "lint:fix": "turbo run lint --fix",
+        "clean": "turbo run clean",
+        "dev": "turbo run dev"
     },
     "devDependencies": {
-        "@tsconfig/node20": "20.1.9",
-        "@types/blessed": "^0.1.27",
-        "@types/jest": "^30.0.0",
-        "@types/node": "^20.0.0",
-        "@types/yargs": "^17.0.35",
-        "@typescript-eslint/eslint-plugin": "^8.59.0",
-        "@typescript-eslint/parser": "^8.59.0",
-        "eslint": "^9.39.4",
-        "husky": "^9.1.0",
-        "jest": "^30.3.0",
-        "prettier": "^3.3.0",
-        "rimraf": "^6.0.0",
-        "ts-jest": "^29.4.9",
-        "typescript": "^5.5.0",
-        "typescript-eslint": "^8.59.0"
+        "turbo": "^2.0.0"
     },
+    "packageManager": "pnpm@9.0.0",
     "engines": {
         "node": ">=20.0.0"
     }
